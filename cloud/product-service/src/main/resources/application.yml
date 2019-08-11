@@ -1,0 +1,23 @@
+spring:
+  main:
+    banner-mode: "off"
+  application:
+    name: products
+
+server:
+  port: 8081
+
+eureka:
+  instance:
+    hostname: ${HOSTNAME}
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: ${DISCOVERY_URL}
+
+logging:
+  level:
+    ROOT: "WARN"
+    com.netflix: "ERROR"
+    com.github.hal4j: "INFO"

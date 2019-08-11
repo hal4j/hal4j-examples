@@ -1,0 +1,23 @@
+spring:
+  main:
+    banner-mode: "off"
+  application:
+    name: discovery
+
+server:
+  port: 8888
+
+eureka:
+  instance:
+    hostname: ${HOSTNAME}
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+logging:
+  level:
+    ROOT: "WARN"
+    com.netflix: "ERROR"
+    com.github.hal4j: "INFO"
